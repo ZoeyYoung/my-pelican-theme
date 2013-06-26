@@ -5,6 +5,8 @@
 /* img {
   background: url('./images/loading.gif') center center no-repeat;
 } */
+.container-fluid { padding: 0px; }
+
 i { color: #c8ccd1; }
 .article-metadata span { font-size: 12px; }
 

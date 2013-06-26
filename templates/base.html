@@ -21,7 +21,7 @@
   <![endif]-->
 </head>
 <body>
-  <div class="container">
+  <div class="container-fluid">
     <div class="row-fluid">
       <div id="header" class="span3 no-print">
         <div class="brand-wrapper">
@@ -59,8 +59,9 @@
   </div><!-- End of Container-->
   <!--footer-->
   <footer id="footer" class="no-print">
-    <div class="container">
+    <div class="container-fluid">
       <div class="row-fluid">
+        <div class="span1"></div>
         <div class="span2" id="socialist">
           <ul class="nav">
             <li>Social</li>
@@ -116,12 +117,13 @@
           </ul>
         </div>
         {% if SINA_WEIBO %}
-        <div class="sina-weibo span4 pull-right">
+        <div class="sina-weibo span4">
           {{SINA_WEIBO}}
         </div>
         {% endif %}
+        <div class="span1"></div>
       </div><!--end of fluid row-->
-      <p align="center">
+      <p style="text-align: center;">
           <a href="{{ SITEURL }}">{{ SITENAME }}</a>
           &copy; {{ AUTHOR }}
           Powered by
