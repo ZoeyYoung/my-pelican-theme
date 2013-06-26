@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>{% block windowtitle %}{{ SITENAME }}{% endblock %}</title>
+  <meta name="description" content="{{ DESCRIPTION }}">
+  <meta name="author" content="{{ AUTHOR }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+  <!--[if lt IE 9]>
+  <script src="{{ SITEURL }}/theme/html5.js"></script>
+  <![endif]-->
+  <!-- Le styles -->
+  <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet" />
+  <link href="{{ SITEURL }}/theme/print.css" rel="stylesheet" media="print" />
+  <link href="{{ SITEURL }}/theme/local.css" rel="stylesheet" media="screen" />
+  <link href="{{ SITEURL }}/theme/pygments.css" rel="stylesheet" />
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet" />
+  <!--[if IE 7]>
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome-ie7.min.css" rel="stylesheet" />
+  <![endif]-->
+</head>
+<body>
+  <div class="container">
+    <div class="row-fluid">
+      <div id="header" class="span3 no-print">
+        <div class="brand-wrapper">
+          <a href="{{ SITEURL }}" class="brand">{{SITENAME}}</a>
+          <p style="text-align: center;">{{SITESUBTITLE}}</p>
+        </div>
+        <ul id="blog-nav" class="nav">
+          <li>SITE</li>
+          <li><a href="{{ SITEURL }}">首页</a></li>
+          <li><a href="{{ SITEURL }}/archives.html">归档</a></li>
+          <li><a href="{{ SITEURL }}/tags.html">标签</a></li>
+          <li><hr/></li>
+          <li>CATEGORIES</li>
+          {% for cat, null in categories %}
+          <li {% if cat == category %} class="active" {% endif %}>
+            <a href="{{ SITEURL }}/{{ cat.url }} ">{{ cat }}</a>
+          </li>
+          {% endfor %}
+          <li><hr/></li>
+          {% if DISPLAY_PAGES_ON_MENU %}
+          <li>PAGES<li>
+          {% for page in PAGES %}
+          <li>
+            <a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a>
+          </li>
+          {% endfor %}
+          {% endif %}
+        </ul>
+      </div>
+      <div class="article-content span9">
+          {% block content %}{% endblock %}
+          {# End row #}
+      </div>{# End content #}
+    </div><!-- End of fluid row-->
+  </div><!-- End of Container-->
+  <!--footer-->
+  <footer id="footer" class="no-print">
+    <div class="container">
+      <div class="row-fluid">
+        <div class="span2" id="socialist">
+          <ul class="nav">
+            <li>Social</li>
+            {% for name,link in SOCIAL %}
+            <li><a href="{{ link }}">
+              <i class="icon-{{ name }}"></i>{{name}}
+            </a></li>
+            {% endfor %}
+            {% for name, link, icon in ICON_SOCIAL %}
+            <li><a href="{{ link }}"><i class="{{icon}} {{ICON_SIZE}}"></i>{{ name }}</a></li>
+            {% endfor %}
+            {% if EMAIL %}
+            <li><a href="mailto:{{ EMAIL}}">
+              <i class="icon-envelope {{ICON_SIZE}}"></i>联系我
+            </a></li>
+            {% endif %}
+          </ul>
+        </div>
+        {% include "colophon.html" %}
+        <div class="span2">
+          <ul class="nav">
+            <li>Links</li>
+            {% for name, link in LINKS %}
+            <li><a href="{{ link }}">{{ name }}</a></li>
+            {% endfor %}
+            {% for name, link, icon in ICON_LINKS %}
+            <li><a href="{{ link }}">
+              <i class="{{icon}} {{ICON_SIZE}}"></i>{{ name }}
+            </a></li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="span2" id="site-links">
+          <ul class="nav">
+            <li>Site</li>
+            <li><a href="{{ SITEURL }}">
+              <i class="icon-home {{ICON_SIZE}}"></i>首页
+            </a></li>
+            <li><a href="{{ SITEURL }}/archives.html">
+              <i class="icon-list {{ICON_SIZE}}"></i>归档
+            </a></li>
+            <li><a href="{{ SITEURL }}/tags.html">
+              <i class="icon-tags {{ICON_SIZE}}"></i>标签
+            </a></li>
+            {% if FEED_RSS %}
+            <li><a href="{{ SITEURL }}/{{ FEED_RSS }}" rel="alternate">
+              <i class="icon-rss {{ICON_SIZE}}"></i>RSS Feed
+            </a></li>
+            {% endif %}
+            <li><a href="{{ SITEURL }}/{{ FEED }}" rel="alternate">
+              <i class="icon-rss-sign {{ICON_SIZE}}"></i>Atom Feed
+            </a></li>
+          </ul>
+        </div>
+        {% if SINA_WEIBO %}
+        <div class="sina-weibo span4 pull-right">
+          {{SINA_WEIBO}}
+        </div>
+        {% endif %}
+      </div><!--end of fluid row-->
+      <p align="center">
+          <a href="{{ SITEURL }}">{{ SITENAME }}</a>
+          &copy; {{ AUTHOR }}
+          Powered by
+          <a href="https://github.com/getpelican/pelican">Pelican</a>
+          and
+          <a href="https://twitter.github.com/bootstrap">Twitter Bootstrap</a>
+          .
+          Icons by
+          <a href="http://gregoryloucas.github.io/Fontstrap/">Font Awesome</a>
+      </p>
+    </div>
+  </footer>
+  <!--/footer-->
+  <script src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+  {% include "analytics.html" %}
+</body>
+</html>
