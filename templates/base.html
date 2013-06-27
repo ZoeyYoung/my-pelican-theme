@@ -23,10 +23,10 @@
 <body>
   <div class="container-fluid">
     <div class="row-fluid">
-      <div id="header" class="span3 no-print">
+      <div id="header" class="span2 no-print">
         <div class="brand-wrapper">
           <a href="{{ SITEURL }}" class="brand">{{SITENAME}}</a>
-          <p style="text-align: center;">{{SITESUBTITLE}}</p>
+          <p style="text-align: center; font-size: 12px; margin-top: 0;">{{SITESUBTITLE}}</p>
         </div>
         <ul id="blog-nav" class="nav">
           <li>SITE</li>
@@ -51,7 +51,7 @@
           {% endif %}
         </ul>
       </div>
-      <div class="article-content span9">
+      <div class="article-content span10">
           {% block content %}{% endblock %}
           {# End row #}
       </div>{# End content #}

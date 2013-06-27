@@ -19,11 +19,11 @@ i { color: #c8ccd1; }
 
 
 #blog-nav{
-  width: 100%;
-  padding: 5px 0;
-  font-size: 16px;
-  margin-top: 10px;
-  text-align: center;
+    width: 80%;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 ul#sitelinks.nav.nav-list > li > a >i { color: #1f334b; }
@@ -42,14 +42,15 @@ h1,h2,h3,h4,h5,h6 { color: #000001; margin-bottom: 0px; font-weight: bold;}
 .brand {
   text-indent: -9999px;
   display: block;
-  height: 130px;
-  background: rgba(0, 0, 0, 0) url("./images/logo.svg") center 70px no-repeat;
+  height: 80px;
+  background: rgba(0, 0, 0, 0) url("./images/logo.svg") center 40px no-repeat;
+  background-size: 130px;
 }
 
 .brand-wrapper {
   margin: 20px auto;
-  width: 230px;
-  height: 230px;
+  width: 140px;
+  height: 140px;
   border: 2px dashed #000;
   border-radius: 1000%;
 }
