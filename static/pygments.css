@@ -1,4 +1,5 @@
 /*Syntax highlighting for pygments*/
+.highlight pre { background: #272822; color: #F8F8F2; }
 .highlight .hll { background-color: #ffffcc }
 .highlight .c { color: #60a0b0; font-style: italic } /* Comment */
 .highlight .err { border: 1px solid #FF0000 } /* Error */
