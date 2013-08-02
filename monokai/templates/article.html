@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block windowtitle %}{{ article.title }} - {{ SITENAME }}{% endblock %}
+{% block content %}
+<div class='article'>
+  <div class="row-fluid">
+    <div class="span12">
+      <h1>{{ article.title }}</h1>
+      {% include "article_info.html" %}
+      {{ article.content }}
+      <hr />
+    </div>
+  </div>
+  <div class="span12 comment">
+      {% include 'jiathis.html' %}
+      <!-- <h3>Comments</h3> -->
+      <!-- {% include 'disqus.html' %} -->
+      {% include 'uyan.html' %}
+      {% include 'ujian.html' %}
+  </div>
+</div>
+{% endblock %}
