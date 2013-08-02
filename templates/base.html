@@ -43,6 +43,7 @@
           <li><hr/></li>
           {% if DISPLAY_PAGES_ON_MENU %}
           <li>PAGES<li>
+          {{author_gravatar}}
           {% for page in PAGES %}
           <li>
             <a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a>
@@ -51,7 +52,7 @@
           {% endif %}
         </ul>
       </div>
-      <div class="article-content span10">
+      <div class="main-content span10">
           {% block content %}{% endblock %}
           {# End row #}
       </div>{# End content #}

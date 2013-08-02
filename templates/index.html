@@ -11,6 +11,7 @@
             {% include "article_info.html" %}
             {{ article.content}}
             <a class="btn btn-mini xsmall" href="{{ SITEURL }}/{{ article.url }}"><i class="icon-comment"></i> 评论 </a>
+            <hr />
         </div>
     </div>
     {% if loop.length == 1 %}
@@ -21,8 +22,8 @@
     <div class='row-fluid'>
       <div class='span12'>
         <a href="{{ SITEURL }}/{{ article.url }}"><h1>{{ article.title }}</h1></a>
-        {{ article.summary }}
         {% include "article_info.html" %}
+        {{ article.summary }}
         <a class="btn btn-mini xsmall" href="{{ SITEURL }}/{{ article.url }}">
         <i class="icon-plus-sign"></i> 阅读全文 </a>
         <hr />

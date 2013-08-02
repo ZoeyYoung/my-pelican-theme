@@ -2,14 +2,12 @@
 {% block windowtitle %}{{ article.title }} - {{ SITENAME }}{% endblock %}
 {% block content %}
 <div class='article'>
-  <div class="row-fluid">
-    <div class="span12">
-      <h1>{{ article.title }}</h1>
-      {% include "article_info.html" %}
-      {{ article.content }}
-      <hr />
-    </div>
-  </div>
+  <article class="span12">
+    <h1>{{ article.title }}</h1>
+    {% include "article_info.html" %}
+    {{ article.content }}
+    <hr />
+  </article>
   <div class="span12 comment">
       {% include 'jiathis.html' %}
       <!-- <h3>Comments</h3> -->
